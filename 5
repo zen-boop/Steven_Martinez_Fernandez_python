@@ -1,0 +1,40 @@
+class Fabrica:
+    def __init__(self, llantas, color, precio):
+        self._llantas = llantas
+        self._color = color
+        self._precio = precio
+    def mostrar_informacion(self):
+        print(f"La cantidad de llantas: {self._llantas}\nEl color es: {self._color}\nEl precio es: {self._precio}")
+class Moto(Fabrica):
+    def __init__(self, llantas, color, precio, tipo):
+        super().__init__(llantas, color, precio)
+        self._tipo = tipo
+    def mostrar_informacion(self):
+        super().mostrar_informacion()
+        print(f"El tipo de moto es: {self._tipo}")
+class Carro(Fabrica):
+    def __init__(self, llantas, color, precio, marca):
+        super().__init__(llantas, color, precio)
+        self._marca = marca
+    def mostrar_informacion(self):
+        super().mostrar_informacion()
+        print(f"La marca del carro es: {self._marca}")
+vehiculos = []
+for i in range(2):  
+    tipo_vehiculo = input("Introduce el tipo de vehículo (moto/carro): ").lower()
+    llantas = int(input("Introduce la cantidad de llantas: "))
+    color = input("Introduce el color: ")
+    precio = input("Introduce el precio: ")
+    if tipo_vehiculo == "moto":
+        tipo = input("Introduce el tipo de moto: ")
+        vehiculo = Moto(llantas, color, precio, tipo)
+    elif tipo_vehiculo == "carro":
+        marca = input("Introduce la marca del carro: ")
+        vehiculo = Carro(llantas, color, precio, marca)
+    else:
+        print("Tipo de vehículo no válido.")
+        continue
+    vehiculos.append(vehiculo)
+for vehiculo in vehiculos:
+    vehiculo.mostrar_informacion()
+    print() 
