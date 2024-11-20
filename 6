@@ -1,0 +1,23 @@
+class Marino:
+    def hablar(self):
+        print("¡Hola, soy un animal marino!")
+class Pulpo(Marino):
+    def hablar(self):
+        print("¡Hola, soy un pulpo!")
+class Foca(Marino):
+    def hablar(self, mensaje):
+        self.mensaje = mensaje
+        print(mensaje)
+tipo_animal = input("Introduce el tipo de animal marino (marino/pulpo/foca): ").lower()
+mensaje = input("Introduce un mensaje para el animal marino: ")
+if tipo_animal == "marino":
+    animal = Marino()
+    animal.hablar()
+elif tipo_animal == "pulpo":
+    animal = Pulpo()
+    animal.hablar()
+elif tipo_animal == "foca":
+    animal = Foca()
+    animal.hablar(mensaje)
+else:
+    print("Tipo de animal marino no válido.")
