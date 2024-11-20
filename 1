@@ -1,0 +1,21 @@
+class p:
+    def __init__(s,n,no):
+        s.n=n
+        s.no=no
+    def i(s):
+        print(f"Nombre: {s.n} \nNota: {s.no}")
+    def r(s):
+        if s.no>=7:
+            print("¡Has APROBADO!")
+        else:
+            print("¡Has REPROBADO!")
+n1=input("Introduce el nombre de la primera persona: ")
+no1=float(input(f"Introduce la nota de {n1}: "))
+n2=input("Introduce el nombre de la segunda persona: ")
+no2=float(input(f"Introduce la nota de {n2}: "))
+p1=p(n1,no1)
+p2=p(n2,no2)
+p1.i()
+p1.r()
+p2.i()
+p2.r()
